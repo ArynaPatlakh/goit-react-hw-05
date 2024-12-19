@@ -1,0 +1,28 @@
+.wrapper {
+  text-align: left;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-around;
+}
+
+.image {
+  width: 150px;
+  height: 225px;
+}
+
+.item_wrap {
+  width: 150px;
+  font-size: 12px;
+}
+
+.title {
+  display: block;
+  color: #787de1;
+  border-bottom: #787de1 1px solid;
+  text-align: center;
+}

@@ -1,0 +1,36 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.image {
+  min-width: 300px;
+  height: auto;
+  padding: 0;
+}
+
+.info {
+  margin-left: 20px;
+  border: 2px solid #646cff;
+  padding: 15px;
+}
+
+.title {
+  display: block;
+  color: #787de1;
+  border-bottom: #787de1 1px solid;
+  text-align: center;
+}
+
+.second_title {
+  color: #5f64c3;
+}
+
+.additional {
+  margin-bottom: 20px;
+  font-size: large;
+  font-weight: bold;
+}

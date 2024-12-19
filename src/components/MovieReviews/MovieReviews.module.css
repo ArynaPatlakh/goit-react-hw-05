@@ -1,0 +1,33 @@
+.wrapper {
+  text-align: left;
+}
+.list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.title {
+  display: block;
+  color: #787de1;
+  border-bottom: #787de1 1px solid;
+  text-align: center;
+}
+
+.item {
+  border: 0.5px solid #787de1;
+  padding: 15px;
+  width: 100%;
+}
+
+h4 {
+  margin: 0;
+}
+
+.any {
+  font-weight: bold;
+  color: greenyellow;
+  text-align: center;
+}
