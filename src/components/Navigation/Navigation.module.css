@@ -3,12 +3,16 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
+  padding: 10px;
+  border-bottom: 1px rgba(255, 255, 255, 0.192) solid;
+  border-right: 1px rgba(255, 255, 255, 0.192) solid;
+  border-style: groove;
 }
 .link {
- border: none
+  border: none;
 }
 
 .active {
-    border-bottom: 2px #646cff solid;
-    font-size: 20px;
+  border-bottom: 2px #646cff solid;
+  font-size: 20px;
 }

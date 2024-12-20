@@ -1,28 +1,16 @@
-import { useEffect, useState } from "react";
-import { fetchTopMovies } from "../../api/api";
+
 import { Link } from "react-router-dom";
+import s from "./MovieList.module.css"
 
-const MovieList = () => {
-  const [movies, setMovies] = useState(null);
-  useEffect(() => {
-    const getData = async () => {
-      const data = await fetchTopMovies();
-      setMovies(data);
-    };
-    getData();
-  }, []);
-
-  if (!movies) {
-    return;
-  }
+const MovieList = ({movies}) => {
 
   return (
     <div>
       <h2>Trending today</h2>
-      <ul>
+      <ul className={s.list}>
         {movies.map((movie) => (
           <li key={movie.id}>
-            <Link to={`movies/${movie.id.toString()}`}>
+            <Link className={s.link} to={`movies/${movie.id.toString()}`}>
               <p>{movie.title}</p>
             </Link>
           </li>

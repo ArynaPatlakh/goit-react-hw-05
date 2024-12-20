@@ -1,0 +1,12 @@
+.list{
+    list-style: none;
+    text-align: left;
+
+
+}
+
+.link{
+    color: white;
+    cursor: pointer;
+}
+
