@@ -17,7 +17,7 @@ const HomePage = () => {
   }
   return (
     <div>
-      <MovieList movies={movies} />
+      <MovieList movies={movies} title="Trending today" link='movies/'/>
     </div>
   );
 };

@@ -1,13 +1,16 @@
-import { Link, Outlet, useParams } from "react-router-dom";
+import { Link, Outlet, useLocation, useParams } from "react-router-dom";
 import { detailsMovie } from "../../api/api";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import s from "./MovieDetails.module.css";
+
 const MovieDetails = () => {
   const { movieId } = useParams();
-
+  const location = useLocation();
   const [movieDetail, setMovieDetail] = useState(null);
 
+  const backLinkHref = useRef(location.state ?? "/movies");
   const url = "https://image.tmdb.org/t/p/w500";
+
   useEffect(() => {
     const getData = async () => {
       const data = await detailsMovie(movieId);
@@ -21,7 +24,7 @@ const MovieDetails = () => {
   }
   return (
     <div>
-      {/* <Link to="/">GO BACK</Link> */}
+      <Link to={backLinkHref.current}>GO BACK</Link>
       <div className={s.wrapper}>
         <img src={`${url}${movieDetail.poster_path}`} className={s.image} />
         <div className={s.info}>
@@ -46,8 +49,10 @@ const MovieDetails = () => {
       <div>
         <h4 className={s.additional}>Addittional Information</h4>
         <nav>
-          <Link to="cast">Cast </Link>
-          <Link to="reviews">Reviews</Link>
+          <Suspense fallback={<h2>Loading</h2>}>
+            <Link to="cast">Cast </Link>
+            <Link to="reviews">Reviews</Link>
+          </Suspense>
         </nav>
       </div>
       <Outlet />

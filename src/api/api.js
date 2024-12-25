@@ -15,6 +15,13 @@ export const fetchTopMovies = async () => {
   return topMovies.data.results;
 };
 
+export const fetchSearchMovies = async (query) => {
+  const searchMovies = await axios.get(
+    `https://api.themoviedb.org/3/search/movie?query=${query}&include_adult=false&language=en-US&page=1`,
+    options
+  );
+  return searchMovies.data;
+};
 export const detailsMovie = async (id) => {
   const data = await axios.get(`${defaultUrl}/${id}?language=en-US`, options);
   return data.data;
